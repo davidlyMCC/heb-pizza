@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Delete Order</h1>
+<div mat-dialog-content>
+  <p>Are you sure you want to delete order {{data.order.Order_ID}}?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onYesClick()" cdkFocusInitial>Ok</button>
+</div>

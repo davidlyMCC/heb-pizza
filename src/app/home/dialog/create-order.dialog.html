@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Create Order</h1>
+<div mat-dialog-content>
+  <p>Select some options for your pizza</p>
+  
+  <form class="pizza-form" [formGroup]="pizzaForm" (ngSubmit)="submitForm()">
+  <mat-form-field appearance="fill">
+    <mat-label>Crust</mat-label>
+    <mat-select formControlName="Crust">
+      <mat-option value="normal">Normal</mat-option>
+      <mat-option value="stuffed">Stuffed</mat-option>
+      <mat-option value="thin">Thin</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Flavor</mat-label>
+    <mat-select formControlName="Flavor">
+      <mat-option value="cheese">Cheese</mat-option>
+      <mat-option value="pepperoni">Pepperoni</mat-option>
+      <mat-option value="meatlovers">Meat Lovers</mat-option>
+      <mat-option value="pineapple">Pineapple</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Size</mat-label>
+    <mat-select formControlName="Size" required>
+      <mat-option value="small">Small</mat-option>
+      <mat-option value="medium">Medium</mat-option>
+      <mat-option value="large">Large</mat-option>
+    </mat-select>
+  </mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Table No.</mat-label>
+    <input matInput type="number" formControlName="Table_No" required>
+  </mat-form-field>
+</form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="submitForm()" cdkFocusInitial>Ok</button>
+</div>
